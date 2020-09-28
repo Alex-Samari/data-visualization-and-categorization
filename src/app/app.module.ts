@@ -7,16 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WorkOrdersComponent } from './components/work-orders/work-orders.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WorkOrdersComponent
-  ],
+  declarations: [AppComponent, WorkOrdersComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

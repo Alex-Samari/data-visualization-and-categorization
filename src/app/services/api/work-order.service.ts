@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class WorkOrderService {
   constructor(private http: HttpClient) {}
 
-  getWorkOrders = (): Observable<any> => {
+  getWorkOrders = (): Observable<WorkOrder[]> => {
     return this.http
       .get<any>(`${environment.apiUrl}/work_orders`)
       .pipe(
@@ -20,6 +20,6 @@ export class WorkOrderService {
             new WorkOrder().deserialize(orders)
           )
         )
-      ) as Observable<WorkOrder[]>;
+      );
   };
 }

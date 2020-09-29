@@ -1,6 +1,6 @@
 import { Deserializable } from './deserializable.model';
 
-export class Worker implements Deserializable {
+export class CompanyWorker implements Deserializable {
   public id: number;
   public name: string;
   public email: string;

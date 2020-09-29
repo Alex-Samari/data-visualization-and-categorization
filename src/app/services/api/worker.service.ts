@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { map, catchError } from 'rxjs/operators';
-import { Worker } from 'src/app/models/worker.model';
+import { CompanyWorker } from 'src/app/models/worker.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +11,12 @@ import { Worker } from 'src/app/models/worker.model';
 export class WorkerService {
   constructor(private http: HttpClient) {}
 
-  getWorkerById = (workerId: any): Observable<any> => {
+  getWorkerById = (
+    workerId: CompanyWorker['id']
+  ): Observable<CompanyWorker> => {
     return this.http.get(`${environment.apiUrl}/workers/${workerId}`).pipe(
-      map((data: any) => new Worker().deserialize(data.worker)),
+      map((data: any) => new CompanyWorker().deserialize(data.worker)),
       catchError(() => throwError('User not found'))
-    ) as Observable<any>;
+    );
   };
 }

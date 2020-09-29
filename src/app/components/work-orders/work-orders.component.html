@@ -1,1 +1,42 @@
-<p>work-orders works!</p>
+<div class="work-order-page">
+	<mat-form-field class="filter" appearance="outline">
+		<mat-label>Filter By Worker Name</mat-label>
+		<input matInput placeholder="John Doe" id="name-input" (keyup)="filterByNameValue=$event.target.value">
+		<mat-icon matSuffix>filter_alt</mat-icon>
+	</mat-form-field>
+
+	<mat-button-toggle-group name="sortByDate" aria-label="Sort by Date" multiple='false' id="deadline-input">
+		<mat-button-toggle [value]="true" checked='true' (change)=" sortByEarliestdate$.next(true)">Earliest First
+		</mat-button-toggle>
+		<mat-button-toggle [value]="false" (change)=" sortByEarliestdate$.next(false)">Latest First</mat-button-toggle>
+	</mat-button-toggle-group>
+
+	<div class="work-order-container">
+		<mat-card class="work-order" *ngFor="let workOrder of workOrders | filterWorkOrderByName:filterByNameValue">
+
+			<mat-card-header>
+				<mat-card-title>{{workOrder.name}}</mat-card-title>
+				<mat-card-subtitle>{{workOrder.description}}</mat-card-subtitle>
+			</mat-card-header>
+			<mat-card-content>
+				<div class="worker-info">
+					<img [src]="workOrder.worker?.image" alt="Worker Image">
+					<div class="vertical-aligned-text">
+						<h3>{{workOrder.worker?.name}}</h3>
+						<p>{{workOrder.worker?.companyName}}</p>
+						<p>{{workOrder.worker?.email}}</p>
+					</div>
+
+				</div>
+				<div class="work-deadline">
+					{{workOrder.deadline * 1000 | date:'medium'}}
+				</div>
+
+
+			</mat-card-content>
+
+		</mat-card>
+	</div>
+
+
+</div>

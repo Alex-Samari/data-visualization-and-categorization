@@ -1,0 +1,73 @@
+.work-order-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.filter {
+  width: 100%;
+  max-width: calc(
+    2 * (320px + 2 * 16px) + 2 * 16px
+  ); // (2 * (full width cards + horizontal margins)) + (2 * horizontal paddings) under media query condition of max 1200px
+}
+.work-order-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1920px;
+}
+
+mat-card.work-order {
+  width: 25%;
+  margin: 16px; // Same as Angular mat-card default padding
+  @media screen and (max-width: 1200px) {
+    text-align: center;
+  }
+  @media screen and (max-width: 872px) {
+    margin: 0;
+    width: 100%;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 16px 0;
+  }
+  min-width: 320px; // 32px less than Iphone SE width
+}
+
+.worker-info {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+  img {
+    border-radius: 50%;
+    width: 100px;
+    margin: 16px; // Same as Angular mat-card text default margins
+
+    @media screen and (max-width: 1200px) {
+      width: 175px;
+    }
+  }
+  .vertical-aligned-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 16px; // Same as Angular mat-card text default margins
+  }
+}
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  .work-deadline {
+    margin: 16px; // Same as Angular mat-card text default margins
+    margin-left: auto;
+    @media screen and (max-width: 1200px) {
+      margin: 0;
+    }
+  }
+}

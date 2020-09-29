@@ -18,10 +18,10 @@ export class WorkOrdersComponent implements OnInit, AfterViewInit {
   currentSortValue = true;
   filterByNameValue = null;
 
-  sortByDeadlineFunction(array, deadline) {
+  sortWorkOrdersByDeadline(array) {
     return array.sort((a, b) => {
-      const x = a[deadline];
-      const y = b[deadline];
+      const x = a.deadline;
+      const y = b.deadline;
       return x < y ? -1 : x > y ? 1 : 0;
     });
   }
@@ -33,17 +33,7 @@ export class WorkOrdersComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.workOrderService.getWorkOrders().subscribe((workOrders) => {
-      this.workOrders = workOrders.sort((a, b) => {
-        const keyA = new Date(a.deadline);
-        const keyB = new Date(b.deadline);
-        if (keyA < keyB) {
-          return -1;
-        }
-        if (keyA > keyB) {
-          return 1;
-        }
-        return 0;
-      });
+      this.workOrders = this.sortWorkOrdersByDeadline(workOrders);
 
       workOrders.forEach((workOrder: WorkOrder) => {
         this.workerService

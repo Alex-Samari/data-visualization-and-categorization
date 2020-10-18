@@ -1,10 +1,10 @@
 # Work Orders
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1 as part of the Front-end developer assessment for [Hatchways](https://www.hatchways.io/) in 2020.
+This project was generated with **[Angular CLI](https://github.com/angular/angular-cli)** version 9.1.1 as the front-end developer assessment for **[Hatchways](https://www.hatchways.io/)** in 2020.
 
 The purpose of this project is to categorize the data received from an API and visualize the results using an interactive single page application.
 
-For a detailed guide on how to complete the assessment on your own, please refer to the [Instructions](docs/front-end-assessment-work-orders.pdf)
+For a detailed guide on how to complete the assessment on your own, please refer to the **[Instructions](docs/front-end-assessment-work-orders.pdf)**
 
 ## Development server
 

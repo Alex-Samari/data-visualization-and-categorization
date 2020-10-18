@@ -1,6 +1,8 @@
-# WorkOrders
+# Work Orders
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1 as part of the Front-end developer assessment for [Hatchways](https://www.hatchways.io/) in 2020.
+
+For a detailed guide on how to complete the assessment on your own, please refer to the [Instructions](docs/front-end-assessment-work-orders.pdf)
 
 ## Development server
 
